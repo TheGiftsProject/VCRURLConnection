@@ -68,7 +68,7 @@
 
 - (BOOL)isText {
     NSString *type = [self.headerFields objectForKey:@"Content-Type"] ?: @"text/plain";
-    NSArray *types = @[ @"text/plain", @"text/html", @"application/json", @"application/xml" ];
+    NSArray *types = @[ @"text/plain", @"text/html", @"application/json", @"application/xml", @"text/xml" ];
     for (NSString *textType in types) {
         if ([type rangeOfString:textType].location != NSNotFound) return YES;
     }
