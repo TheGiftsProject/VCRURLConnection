@@ -122,6 +122,7 @@ static IMP VCRSwizzle(SEL selector, IMP newImpl) {
 + (void)stop {
     VCRSwizzle(@selector(initWithRequest:delegate:startImmediately:), (IMP)orig_initWithRequest1);
     VCRSwizzle(@selector(initWithRequest:delegate:), (IMP)orig_initWithRequest2);
+    [VCRCassetteManager defaultManager].currentCassetteURL = nil;
 }
 
 + (void)save:(NSString *)path {
